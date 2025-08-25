@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpressNow | Prepaid Same-Day Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <body class="bg-gray-50 pt-20">
+
+  <!-- Fixed Header -->
+  <header class="header-gradient fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo with Speed Motif -->
+        <div class="flex items-center">
+          <div class="flex items-center space-x-2">
+            <!-- Document/Speed Icon -->
+            <h1 class="text-white text-3xl font-bold tracking-tight">
+              Express<span class="text-cyan-300">Now</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#services" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Services
+          </a>
+          <a href="#packages" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Prepaid Packages
+          </a>
+          <a href="delivery-request.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Request Delivery
+          </a>
+          <a href="track-delivery.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Track Delivery
+          </a>
+          <a href="about.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Why Us
+          </a>
+          <a href="contact.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Contact
+          </a>
+        </nav>
+
+        <!-- CTA Buttons (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <button class="cta-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Driver Sign-up
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white hover:text-cyan-300 focus:outline-none transition-colors duration-200">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden mobile-menu-slide bg-blue-800 bg-opacity-95 backdrop-blur-sm">
+      <div class="px-4 pt-4 pb-6 space-y-3">
+        <!-- Mobile Navigation Links -->
+        <a href="#services" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Services / How It Works
+        </a>
+        <a href="#packages" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Prepaid Packages & Pricing
+        </a>
+        <a href="delivery-request.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Request Delivery
+        </a>
+        <a href="track-delivery.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Track Delivery
+        </a>
+        <a href="about.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          About / Why Us
+        </a>
+        <a href="contact.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Contact
+        </a>
+        
+        <!-- Mobile CTA Buttons -->
+        <div class="pt-4 space-y-3">
+          <button class="cta-primary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+<!-- About / Why Us Section -->
+<section id="about" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose Express Now?</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed mb-6">
+        Many same-day delivery services compromise on reliability, security, or cost. At Express Now, we bridge that gap by offering affordable, transparent, and dependable service for packages up to 5kg. Our team conducts in-person interviews with every driver to ensure professionalism, accountability, and a deep understanding of our mission. This way, your packages are handled safely, delivered on time, and at competitive rates without hidden fees.  
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="grid gap-8 lg:grid-cols-3">
+      <!-- Feature 1: Speed -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-4">
+          <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Fast & Reliable</h3>
+        <p class="text-gray-600">
+          Same-day delivery across major cities, with real-time tracking and notifications.
+        </p>
+      </div>
+      
+      <!-- Feature 2: Secure -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-4">
+          <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 1L3 5v6c0 5 3.99 9.27 9 10 5.01-.73 9-5 9-10V5l-9-4zM12 13a3 3 0 100-6 3 3 0 000 6z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Secure Handling</h3>
+        <p class="text-gray-600">
+          Every package is handled by professionally vetted drivers to ensure accountability and care.
+        </p>
+      </div>
+      
+      <!-- Feature 3: Transparent Pricing -->
+      <div class="bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-all duration-300">
+        <div class="flex justify-center mb-4">
+          <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-full shadow-lg">
+            <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm1 17h-2v-2h2v2zm0-4h-2V7h2v7z"/>
+            </svg>
+          </div>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">Transparent Pricing</h3>
+        <p class="text-gray-600">
+          Clear prepaid packages with no hidden fees, competitive rates, and convenient payment options.
+        </p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<script src="main.js"></script>

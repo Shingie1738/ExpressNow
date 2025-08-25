@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpressNow | Prepaid Same-Day Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <body class="bg-gray-50 pt-20">
+
+  <!-- Fixed Header -->
+  <header class="header-gradient fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo with Speed Motif -->
+        <div class="flex items-center">
+          <div class="flex items-center space-x-2">
+            <!-- Document/Speed Icon -->
+            <h1 class="text-white text-3xl font-bold tracking-tight">
+              Express<span class="text-cyan-300">Now</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#services" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Services
+          </a>
+          <a href="#packages" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Prepaid Packages
+          </a>
+          <a href="delivery-request.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Request Delivery
+          </a>
+          <a href="track-delivery.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Track Delivery
+          </a>
+          <a href="about.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Why Us
+          </a>
+          <a href="contact.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Contact
+          </a>
+        </nav>
+
+        <!-- CTA Buttons (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <button class="cta-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Driver Sign-up
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white hover:text-cyan-300 focus:outline-none transition-colors duration-200">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden mobile-menu-slide bg-blue-800 bg-opacity-95 backdrop-blur-sm">
+      <div class="px-4 pt-4 pb-6 space-y-3">
+        <!-- Mobile Navigation Links -->
+        <a href="#services" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Services / How It Works
+        </a>
+        <a href="#packages" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Prepaid Packages & Pricing
+        </a>
+        <a href="delivery-request.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Request Delivery
+        </a>
+        <a href="track-delivery.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Track Delivery
+        </a>
+        <a href="about.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          About / Why Us
+        </a>
+        <a href="contact.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Contact
+        </a>
+        
+        <!-- Mobile CTA Buttons -->
+        <div class="pt-4 space-y-3">
+          <button class="cta-primary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Contact Page -->
+<section id="contact" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+      <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+        Have questions or need assistance? Fill out the form below and our team will get back to you within 24 hours.
+      </p>
+    </div>
+
+    <!-- Grid Layout -->
+    <div class="grid gap-12 lg:grid-cols-2">
+      
+      <!-- Contact Form -->
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <form id="contactForm" class="space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Full Name *</label>
+            <input type="text" name="fullName" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-gray-50 focus:bg-white">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Email Address *</label>
+            <input type="email" name="email" required
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-gray-50 focus:bg-white">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+            <input type="tel" name="phone"
+                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-gray-50 focus:bg-white">
+          </div>
+          
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Message *</label>
+            <textarea name="message" rows="5" required
+                      class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-gray-50 focus:bg-white resize-none"></textarea>
+          </div>
+          
+          <div>
+            <button type="submit"
+                    class="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+              Send Message
+            </button>
+          </div>
+        </form>
+        
+        <!-- Success Message -->
+        <div id="contactSuccess" class="hidden mt-6 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 font-medium">
+          Thank you! Your message has been sent. We will get back to you within 24 hours.
+        </div>
+      </div>
+
+      <!-- Contact Info & Map -->
+      <div class="space-y-8">
+        <!-- Business Info -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 space-y-4">
+          <h3 class="text-xl font-semibold text-gray-900">Our Office</h3>
+          <p class="text-gray-600">123 Delivery Lane, Cape Town, South Africa</p>
+          <p class="text-gray-600">Phone: 082 123 4567</p>
+          <p class="text-gray-600">Email: info@expressnow.co.za</p>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<script src="main.js"></script>

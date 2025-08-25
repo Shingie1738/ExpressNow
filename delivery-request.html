@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpressNow | Prepaid Same-Day Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <body class="bg-gray-50 pt-20">
+
+  <!-- Fixed Header -->
+  <header class="header-gradient fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo with Speed Motif -->
+        <div class="flex items-center">
+          <div class="flex items-center space-x-2">
+            <!-- Document/Speed Icon -->
+            <h1 class="text-white text-3xl font-bold tracking-tight">
+              Express<span class="text-cyan-300">Now</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#services" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Services
+          </a>
+          <a href="#packages" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Prepaid Packages
+          </a>
+          <a href="delivery-request.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Request Delivery
+          </a>
+          <a href="track-delivery.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Track Delivery
+          </a>
+          <a href="about.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Why Us
+          </a>
+          <a href="contact.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Contact
+          </a>
+        </nav>
+
+        <!-- CTA Buttons (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <button class="cta-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Driver Sign-up
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white hover:text-cyan-300 focus:outline-none transition-colors duration-200">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden mobile-menu-slide bg-blue-800 bg-opacity-95 backdrop-blur-sm">
+      <div class="px-4 pt-4 pb-6 space-y-3">
+        <!-- Mobile Navigation Links -->
+        <a href="#services" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Services / How It Works
+        </a>
+        <a href="#packages" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Prepaid Packages & Pricing
+        </a>
+        <a href="delivery-request.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Request Delivery
+        </a>
+        <a href="track-delivery.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Track Delivery
+        </a>
+        <a href="about.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          About / Why Us
+        </a>
+        <a href="contact.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Contact
+        </a>
+        
+        <!-- Mobile CTA Buttons -->
+        <div class="pt-4 space-y-3">
+          <button class="cta-primary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Delivery Request Form Section -->
+  <section id="delivery" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Request a Same-Day Delivery</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Fill out the form below to schedule a prepaid or one-off same-day delivery. 
+          Our team ensures your packages arrive securely and on time.
+        </p>
+      </div>
+
+      <!-- Form Container -->
+      <div class="max-w-lg mx-auto">
+        <!-- Decorative Elements -->
+        <div class="relative">
+          <!-- Background Decorations -->
+          <div class="absolute -top-8 -left-8 w-16 h-16 bg-cyan-100 rounded-full opacity-50 animate-pulse"></div>
+          <div class="absolute -bottom-8 -right-8 w-20 h-20 bg-blue-100 rounded-full opacity-30 animate-pulse" style="animation-delay: 1s;"></div>
+          
+          <!-- Form Card -->
+          <div class="bg-white backdrop-blur-sm bg-opacity-95 rounded-2xl shadow-xl border border-gray-200 p-8 relative overflow-hidden">
+            <!-- Glassmorphism Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-50"></div>
+            
+            <!-- Form Content -->
+            <div class="relative z-10">
+              <!-- Form Header Icon -->
+              <div class="flex justify-center mb-8">
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-xl shadow-lg">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 8l-8 5-8-5V6l8 5 8-5v2zm0-2H4l8 4.99L20 6z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Delivery Request Form -->
+              <form id="deliveryForm" class="space-y-6">
+                <!-- Pickup Details -->
+                <div class="space-y-4">
+                  <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <svg class="w-5 h-5 text-cyan-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    Pickup Details
+                  </h3>
+                  
+                  <!-- Pickup Address -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                    </div>
+                    <input type="text" id="pickupAddress" name="pickupAddress" required
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="Pickup address (e.g., 123 Main St, Cape Town)">
+                  </div>
+
+                  <!-- Pickup Contact -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                    <input type="text" id="pickupContact" name="pickupContact" required
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="Pickup contact name">
+                  </div>
+
+                  <!-- Pickup Phone -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                    </div>
+                    <input type="tel" id="pickupPhone" name="pickupPhone" required
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="Pickup contact phone (e.g., 082 123 4567)">
+                  </div>
+                </div>
+
+                <!-- Delivery Details -->
+                <div class="space-y-4">
+                  <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                    </svg>
+                    Delivery Details
+                  </h3>
+                  
+                  <!-- Delivery Address -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                      </svg>
+                    </div>
+                    <input type="text" id="deliveryAddress" name="deliveryAddress" required
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="Delivery address (e.g., 456 Oak Ave, Johannesburg)">
+                  </div>
+
+                  <!-- Delivery Contact -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      </svg>
+                    </div>
+                    <input type="text" id="deliveryContact" name="deliveryContact" required
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="Delivery contact name">
+                  </div>
+
+                  <!-- Delivery Phone -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                      </svg>
+                    </div>
+                    <input type="tel" id="deliveryPhone" name="deliveryPhone" required
+                           class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="Delivery contact phone (e.g., 082 123 4567)">
+                  </div>
+                </div>
+
+                <!-- Package Information -->
+                <div class="space-y-4">
+                  <h3 class="text-lg font-semibold text-gray-900 flex items-center">
+                    <svg class="w-5 h-5 text-purple-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 6h-2V4c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/>
+                    </svg>
+                    Package Information
+                  </h3>
+
+                  <!-- Package Type -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                      </svg>
+                    </div>
+                    <select id="packageType" name="packageType" required
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white appearance-none">
+                      <option value="">Select package type</option>
+                      <option value="documents">Documents</option>
+                      <option value="lab-samples">Lab Samples</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                      </svg>
+                    </div>
+                  </div>
+
+                  <!-- Weight -->
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 3L2 12h3v8h14v-8h3L12 3zm0 2.5L18.5 12H16v6H8v-6H5.5L12 5.5z"/>
+                      </svg>
+                    </div>
+                    <input type="number" id="weight" name="weight" min="0.1" max="5" step="0.1" required
+                           class="w-full pl-10 pr-16 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                           placeholder="0.5">
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                      <span class="text-gray-500 text-sm">kg</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Delivery Instructions -->
+                <div class="space-y-2">
+                  <label for="instructions" class="block text-sm font-medium text-gray-700">
+                    Delivery Instructions (Optional)
+                  </label>
+                  <textarea id="instructions" name="instructions" rows="3"
+                            class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white resize-none"
+                            placeholder="Special handling instructions, access codes, etc."></textarea>
+                </div>
+
+                <!-- Payment Option -->
+                <div class="space-y-2">
+                  <label for="paymentOption" class="block text-sm font-medium text-gray-700">
+                    Payment Option *
+                  </label>
+                  <div class="relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/>
+                      </svg>
+                    </div>
+                    <select id="paymentOption" name="paymentOption" required
+                            class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white appearance-none">
+                      <option value="">Select payment method</option>
+                      <option value="prepaid">Use Prepaid Credits</option>
+                      <option value="one-off">One-Off Payment</option>
+                    </select>
+                    <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                      <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 10l5 5 5-5z"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-6">
+                  <button type="submit" id="submitBtn"
+                          class="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                    <span class="flex items-center justify-center">
+                      <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                      </svg>
+                      Submit Delivery Request
+                    </span>
+                  </button>
+                </div>
+              </form>
+
+<!-- Success Message (Hidden by default) -->
+    <div id="successMessage" class="hidden mt-8 p-6 bg-green-50 border border-green-200 rounded-xl">
+        <div class="flex items-center space-x-3">
+    <!-- Checkmark Icon -->
+        <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10
+               10-4.48 10-10S17.52 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z"/>
+        </svg>
+    
+    <!-- Message Text -->
+        <span class="text-green-700 font-medium">
+        Your application has been submitted! You will hear from us within 24 hours.
+        </span>
+        </div>
+    </div>
+ </section>
+
+                    <!-- Footer -->
+<footer class="bg-blue-800 text-white py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      <!-- Logo / Brand -->
+      <div>
+        <h2 class="text-2xl font-bold text-white mb-4">Express Now</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Fast, reliable same-day deliveries across South Africa.  
+          Your packages, our priority.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li><a href="index.html" class="hover:text-cyan-300 transition-all">Home</a></li>
+          <li><a href="about.html" class="hover:text-cyan-300 transition-all">About Us</a></li>
+          <li><a href="delivery-request.html" class="hover:text-cyan-300 transition-all">Request Delivery</a></li>
+          <li><a href="track-delivery.html" class="hover:text-cyan-300 transition-all">Track Delivery</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-300 transition-all">Contact</a></li>
+          <li><a href="driver-signup.html" class="hover:text-cyan-300 transition-all">Driver Sign-Up</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-4">Contact</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li>📍 123 Delivery Lane, Cape Town, SA</li>
+          <li>📞 082 123 4567</li>
+          <li>✉️ info@expressnow.co.za</li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-4">Follow Us</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="hover:text-cyan-300 transition-all">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M24 4.557a9.83 9.83 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.555-2.005.959-3.127 1.184A4.916 4.916 0 0 0 16.616 3c-2.717 0-4.92 2.203-4.92 4.917 0 .386.043.762.127 1.124-4.087-.205-7.713-2.165-10.141-5.144a4.93 4.93 0 0 0-.666 2.472c0 1.706.869 3.213 2.188 4.096a4.904 4.904 0 0 1-2.229-.616v.061c0 2.385 1.697 4.374 3.946 4.827a4.935 4.935 0 0 1-2.224.084c.627 1.956 2.445 3.379 4.6 3.419A9.867 9.867 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.056 0 14.01-7.514 14.01-14.01 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/>
+            </svg>
+          </a>
+          <a href="#" class="hover:text-cyan-300 transition-all">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M22.225 0H1.771C.792 0 0 .774 0 1.728v20.543C0 23.227.792 24 1.771 24H22.23c.98 0 1.77-.773 1.77-1.729V1.728C24 .774 23.207 0 22.225 0zM7.078 20.452H3.556V9h3.522v11.452zM5.317 7.566a2.042 2.042 0 1 1 0-4.084 2.042 2.042 0 0 1 0 4.084zM20.452 20.452h-3.523v-5.556c0-1.324-.027-3.026-1.844-3.026-1.844 0-2.126 1.441-2.126 2.928v5.654h-3.523V9h3.386v1.561h.049c.471-.892 1.623-1.844 3.338-1.844 3.569 0 4.231 2.348 4.231 5.398v6.337z"/>
+            </svg>
+          </a>
+          <a href="#" class="hover:text-cyan-300 transition-all">
+            <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.849.07 1.366.062 2.633.334 3.608 1.308.975.974 1.247 2.242 1.309 3.608.058 1.265.07 1.645.07 4.849s-.012 3.584-.07 4.849c-.062 1.366-.334 2.633-1.309 3.608-.975.975-2.242 1.247-3.608 1.309-1.265.058-1.645.07-4.849.07s-3.584-.012-4.849-.07c-1.366-.062-2.633-.334-3.608-1.309-.975-.975-1.247-2.242-1.309-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.849c.062-1.366.334-2.633 1.309-3.608.975-.975 2.242-1.247 3.608-1.309C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.736 0 8.332.012 7.052.07 5.771.128 4.632.417 3.678 1.372c-.954.954-1.243 2.093-1.301 3.374C2.012 5.668 2 6.072 2 9.337v5.326c0 3.265.012 3.669.07 4.949.058 1.281.347 2.42 1.301 3.374.954.954 2.093 1.243 3.374 1.301 1.281.058 1.685.07 4.949.07s3.668-.012 4.949-.07c1.281-.058 2.42-.347 3.374-1.301.954-.954 1.243-2.093 1.301-3.374.058-1.28.07-1.684.07-4.949V9.337c0-3.265-.012-3.668-.07-4.949-.058-1.281-.347-2.42-1.301-3.374-.954-.954-2.093-1.243-3.374-1.301C15.668.012 15.264 0 12 0z"/>
+              <circle cx="12" cy="12" r="3.5"/>
+              <path d="M18.406 5.594a1.44 1.44 0 1 1-2.875 0 1.44 1.44 0 0 1 2.875 0z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="mt-12 border-t border-blue-700 pt-6 text-center text-gray-400 text-sm">
+      &copy; 2025 Express Now. All rights reserved.
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>

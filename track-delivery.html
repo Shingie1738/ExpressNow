@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpressNow | Prepaid Same-Day Delivery</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <body class="bg-gray-50 pt-20">
+
+  <!-- Fixed Header -->
+  <header class="header-gradient fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        
+        <!-- Logo with Speed Motif -->
+        <div class="flex items-center">
+          <div class="flex items-center space-x-2">
+            <!-- Document/Speed Icon -->
+            <h1 class="text-white text-3xl font-bold tracking-tight">
+              Express<span class="text-cyan-300">Now</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="#services" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Services
+          </a>
+          <a href="#packages" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Prepaid Packages
+          </a>
+          <a href="delivery-request.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Request Delivery
+          </a>
+          <a href="track-delivery.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Track Delivery
+          </a>
+          <a href="about.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Why Us
+          </a>
+          <a href="contact.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">
+            Contact
+          </a>
+        </nav>
+
+        <!-- CTA Buttons (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <button class="cta-primary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+          <button class="cta-secondary text-white px-6 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='#delivery'">
+            Driver Sign-up
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white hover:text-cyan-300 focus:outline-none transition-colors duration-200">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden mobile-menu-slide bg-blue-800 bg-opacity-95 backdrop-blur-sm">
+      <div class="px-4 pt-4 pb-6 space-y-3">
+        <!-- Mobile Navigation Links -->
+        <a href="#services" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Services / How It Works
+        </a>
+        <a href="#packages" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Prepaid Packages & Pricing
+        </a>
+        <a href="delivery-request.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Request Delivery
+        </a>
+        <a href="track-delivery.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Track Delivery
+        </a>
+        <a href="about.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          About / Why Us
+        </a>
+        <a href="contact.html" class="block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition-all duration-200">
+          Contact
+        </a>
+        
+        <!-- Mobile CTA Buttons -->
+        <div class="pt-4 space-y-3">
+          <button class="cta-primary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#packages'">
+            Buy Prepaid Credits
+          </button>
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='#delivery'">
+            Request Delivery
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+    <!-- Delivery Tracking Section -->
+  <section id="tracking" class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-gray-900 mb-6">Track Your Delivery</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          Enter your Delivery ID or reference number to see real-time status updates for your package. 
+          Stay informed every step of the way.
+        </p>
+      </div>
+
+      <!-- Tracking Form Container -->
+      <div class="max-w-md mx-auto mb-16">
+        <!-- Decorative Elements -->
+        <div class="relative">
+          <!-- Background Decorations -->
+          <div class="absolute -top-6 -left-6 w-12 h-12 bg-cyan-100 rounded-full opacity-40 animate-pulse"></div>
+          <div class="absolute -bottom-6 -right-6 w-16 h-16 bg-blue-100 rounded-full opacity-30 animate-pulse" style="animation-delay: 1.5s;"></div>
+          
+          <!-- Form Card -->
+          <div class="bg-white backdrop-blur-sm bg-opacity-95 rounded-2xl shadow-xl border border-gray-200 p-8 relative overflow-hidden">
+            <!-- Glassmorphism Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-white to-gray-50 opacity-50"></div>
+            
+            <!-- Form Content -->
+            <div class="relative z-10">
+              <!-- Form Header Icon -->
+              <div class="flex justify-center mb-8">
+                <div class="bg-gradient-to-br from-cyan-500 to-blue-600 p-4 rounded-xl shadow-lg">
+                  <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Tracking Form -->
+              <form id="trackingForm" class="space-y-6">
+                <!-- Delivery ID Input -->
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                      <polyline points="14,2 14,8 20,8" stroke="currentColor" stroke-width="1" fill="none"/>
+                    </svg>
+                  </div>
+                  <input type="text" id="deliveryId" name="deliveryId" required
+                         class="w-full pl-10 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white text-lg"
+                         placeholder="Enter Delivery ID (e.g., EXP123456)">
+                </div>
+
+                <!-- Optional Email/Phone for Verification -->
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                  </div>
+                  <input type="email" id="verificationEmail" name="verificationEmail"
+                         class="w-full pl-10 pr-4 py-4 border border-gray-300 rounded-xl focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white"
+                         placeholder="Email for verification (optional)">
+                </div>
+
+                <!-- Notification Preferences -->
+                <div class="space-y-3">
+                  <label class="flex items-center">
+                    <input type="checkbox" id="whatsappNotify" name="whatsappNotify" 
+                           class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2">
+                    <span class="ml-3 text-sm text-gray-700 flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                      </svg>
+                      Get WhatsApp updates
+                    </span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" id="emailNotify" name="emailNotify" 
+                           class="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2">
+                    <span class="ml-3 text-sm text-gray-700 flex items-center">
+                      <svg class="w-4 h-4 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                      </svg>
+                      Get email updates
+                    </span>
+                  </label>
+                </div>
+
+                <!-- Track Button -->
+                <div class="pt-4">
+                  <button type="submit" id="trackBtn"
+                          class="w-full bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white py-4 px-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-cyan-200">
+                    <span class="flex items-center justify-center">
+                      <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                      </svg>
+                      Track Delivery
+                    </span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delivery Status Display -->
+      <div id="trackingResults" class="hidden max-w-4xl mx-auto">
+        <!-- Delivery Info Card -->
+        <div class="bg-white rounded-2xl shadow-xl border border-gray-200 p-8 mb-8">
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">Delivery Status</h3>
+            <p class="text-gray-600">Tracking ID: <span id="displayTrackingId" class="font-semibold text-cyan-600"></span></p>
+          </div>
+
+          <!-- Progress Bar Container -->
+          <div class="relative mb-12">
+            <!-- Progress Line -->
+            <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-200 rounded-full transform -translate-y-1/2">
+              <div id="progressBar" class="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+            </div>
+
+            <!-- Status Steps -->
+            <div class="relative flex justify-between">
+              <!-- Step 1: Picked Up -->
+              <div class="flex flex-col items-center">
+                <div id="step1" class="w-12 h-12 rounded-full border-4 border-gray-200 bg-white flex items-center justify-center transition-all duration-500 z-10">
+                  <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 6h-2V4c0-1.11-.89-2-2-2H8c-1.11 0-2 .89-2 2v2H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/>
+                  </svg>
+                </div>
+                <div class="mt-4 text-center">
+                  <p class="text-sm font-semibold text-gray-900">Picked Up</p>
+                  <p id="step1Time" class="text-xs text-gray-500 mt-1">--:--</p>
+                </div>
+              </div>
+
+              <!-- Step 2: In Transit -->
+              <div class="flex flex-col items-center">
+                <div id="step2" class="w-12 h-12 rounded-full border-4 border-gray-200 bg-white flex items-center justify-center transition-all duration-500 z-10">
+                  <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                  </svg>
+                </div>
+                <div class="mt-4 text-center">
+                  <p class="text-sm font-semibold text-gray-900">In Transit</p>
+                  <p id="step2Time" class="text-xs text-gray-500 mt-1">--:--</p>
+                </div>
+              </div>
+
+              <!-- Step 3: Delivered -->
+              <div class="flex flex-col items-center">
+                <div id="step3" class="w-12 h-12 rounded-full border-4 border-gray-200 bg-white flex items-center justify-center transition-all duration-500 z-10">
+                  <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                  </svg>
+                </div>
+                <div class="mt-4 text-center">
+                  <p class="text-sm font-semibold text-gray-900">Delivered</p>
+                  <p id="step3Time" class="text-xs text-gray-500 mt-1">--:--</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Current Status Message -->
+          <div id="statusMessage" class="text-center p-6 bg-gray-50 rounded-xl">
+            <p class="text-lg font-semibold text-gray-900 mb-2">Preparing for pickup...</p>
+            <p class="text-gray-600">Your delivery request is being processed.</p>
+          </div>
+
+          <!-- Delivery Details -->
+          <div class="grid md:grid-cols-2 gap-6 mt-8">
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                <svg class="w-5 h-5 text-cyan-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                Pickup Details
+              </h4>
+              <p id="pickupInfo" class="text-gray-600 text-sm">Loading...</p>
+            </div>
+            <div class="bg-gray-50 rounded-xl p-6">
+              <h4 class="font-semibold text-gray-900 mb-4 flex items-center">
+                <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/>
+                </svg>
+                Delivery Details
+              </h4>
+              <p id="deliveryInfo" class="text-gray-600 text-sm">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Track Another Button -->
+        <div class="text-center">
+          <button id="trackAnotherBtn" class="bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-300 hover:border-cyan-400 px-8 py-3 rounded-xl font-semibold transition-all duration-300 shadow-sm hover:shadow-md">
+            Track Another Delivery
+          </button>
+        </div>
+      </div>
+
+      <!-- Error Message -->
+      <div id="trackingError" class="hidden max-w-md mx-auto">
+        <div class="bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+          <svg class="w-12 h-12 text-red-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <h3 class="text-lg font-semibold text-red-800 mb-2">Delivery Not Found</h3>
+          <p class="text-red-700 mb-4">We couldn't find a delivery with that ID. Please check your reference number and try again.</p>
+          <button id="tryAgainBtn" class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors duration-200">
+            Try Again
+          </button>
+        </div>
+      </div>
+
+      <!-- Sample Tracking IDs -->
+      <div class="mt-16 text-center">
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 max-w-2xl mx-auto">
+          <div class="flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-cyan-500 mr-2" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h3 class="text-lg font-semibold text-gray-900">Try Sample Tracking</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Test our tracking system with these sample delivery IDs to see how it works.
+          </p>
+          <div class="flex flex-wrap gap-2 justify-center">
+            <button class="sample-id bg-cyan-50 hover:bg-cyan-100 text-cyan-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200" data-id="EXP123456">
+              EXP123456
+            </button>
+            <button class="sample-id bg-blue-50 hover:bg-blue-100 text-blue-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200" data-id="EXP789012">
+              EXP789012
+            </button>
+            <button class="sample-id bg-green-50 hover:bg-green-100 text-green-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200" data-id="EXP345678">
+              EXP345678
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="main.js"></script>
