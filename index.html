@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExpressNow Connect | Logistics Marketplace</title>
+
+  <!-- Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-gray-50 pt-20">
+
+  <!-- Fixed Header -->
+  <header class="header-gradient fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <h1 class="text-white text-3xl font-bold tracking-tight">
+            ExpressNow <span class="text-cyan-300">Connect</span>
+          </h1>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-2">
+          <a href="#how" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">How it works</a>
+          <a href="#features" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Features</a>
+          <a href="#pricing" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Pricing</a>
+          <a href="track.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Track</a>
+          <a href="contact.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Contact Us</a>
+        </nav>
+
+        <!-- CTA Buttons (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <button class="cta-secondary text-white px-5 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='login.html'">
+            Login
+          </button>
+          <button class="cta-secondary text-white px-5 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='signup.html'">
+            Sign up
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white hover:text-cyan-300 focus:outline-none transition-colors duration-200" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden mobile-menu-slide bg-blue-800 bg-opacity-95 backdrop-blur-sm">
+      <div class="px-4 pt-4 pb-6 space-y-3">
+        <a href="#how" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">How it works</a>
+        <a href="#features" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">Features</a>
+        <a href="#pricing" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">Pricing</a>
+        <a href="track.html" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">Track</a>
+
+        <!-- Mobile CTA Buttons -->
+        <div class="pt-4 space-y-3">
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='login.html'">Login</button>
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='signup.html'">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+<!-- Hero -->
+<!-- Hero -->
+<section id="hero" class="hero-wrap relative overflow-hidden">
+  <div class="hero-bg"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <!-- Left: Copy -->
+      <div class="lg:col-span-7">
+        <span class="tagline">The logistics marketplace for Africa’s entrepreneurs and small businesses</span>
+
+        <h1 class="hero-title">
+          Post your load, get bids from trusted drivers, <span class="accent">pay securely</span>.
+        </h1>
+
+        <p class="hero-sub">
+          Time-slot enforcement, rating-first matching, and optional instant pricing. Start in minutes—no phone calls, no spreadsheets.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">Escrow payments</span>
+          <span class="badge">5-star rating system</span>
+          <span class="badge">Cross-border ready</span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="signup.html" class="btn btn-primary">Create account</a>
+          <a href="login.html" class="btn btn-ghost">Login</a>
+          <a href="#demo" class="btn btn-ghost">Try the Demo</a>
+        </div>
+
+        <!-- Trust bullets -->
+        <ul class="hero-checklist">
+          <li><span class="check"></span> Instant metro lead time (15 min)</li>
+          <li><span class="check"></span> City/National/Cross-border lead (90 min)</li>
+          <li><span class="check"></span> Transparent bids + instant match</li>
+        </ul>
+      </div>
+
+      <!-- Right: Product preview -->
+      <div class="lg:col-span-5">
+        <div class="hero-media">
+          <!-- Top mock card -->
+          <div class="mock-card">
+            <div class="mock-header">
+              <div class="pill-mini">Load • Metro</div>
+              <div class="chip">Est. R620</div>
+            </div>
+
+            <div class="route">
+              <div class="point">
+                <span class="dot dot-green"></span>
+                <div>
+                  <div class="route-label">Pickup</div>
+                  <div class="route-val">Cape Town CBD</div>
+                </div>
+              </div>
+
+              <div class="route-line">
+                <svg viewBox="0 0 240 12" preserveAspectRatio="none">
+                  <path d="M2 6 H238" vector-effect="non-scaling-stroke" />
+                </svg>
+              </div>
+
+              <div class="point">
+                <span class="dot dot-blue"></span>
+                <div>
+                  <div class="route-label">Drop-off</div>
+                  <div class="route-val">Stellenbosch</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="meta">
+              <div class="meta-item">
+                <span class="meta-k">Window</span>
+                <span class="meta-v">11:00–12:00, Today</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-k">Vehicle</span>
+                <span class="meta-v">Bakkie</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-k">Weight</span>
+                <span class="meta-v">350 kg</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom mock card -->
+          <div class="mock-card alt">
+            <div class="mock-header">
+              <div class="pill-mini">Bids</div>
+              <div class="chip chip-soft">3 incoming</div>
+            </div>
+            <div class="bids">
+              <div class="bid">
+                <div class="bid-left">
+                  <div class="avatar">TM</div>
+                  <div>
+                    <div class="bid-name">Tumi Logistics</div>
+                    <div class="bid-sub">4.9★ • 120 trips</div>
+                  </div>
+                </div>
+                <div class="bid-right">
+                  <div class="bid-price">R580</div>
+                  <div class="bid-eta">ETA 45–60m</div>
+                </div>
+              </div>
+              <div class="bid">
+                <div class="bid-left">
+                  <div class="avatar">KB</div>
+                  <div>
+                    <div class="bid-name">Kabelo Freight</div>
+                    <div class="bid-sub">4.8★ • 92 trips</div>
+                  </div>
+                </div>
+                <div class="bid-right">
+                  <div class="bid-price">R615</div>
+                  <div class="bid-eta">ETA 40–55m</div>
+                </div>
+              </div>
+              <div class="bid">
+                <div class="bid-left">
+                  <div class="avatar">AN</div>
+                  <div>
+                    <div class="bid-name">Anesu Movers</div>
+                    <div class="bid-sub">5.0★ • 60 trips</div>
+                  </div>
+                </div>
+                <div class="bid-right">
+                  <div class="bid-price">R640</div>
+                  <div class="bid-eta">ETA 50–65m</div>
+                </div>
+              </div>
+            </div>
+            <div class="mock-actions">
+              <a href="#demo" class="btn btn-primary w-full">Try the Demo</a>
+            </div>
+          </div>
+
+          <!-- Mini trust strip -->
+          <div class="trust-strip">
+            <div class="trust-item">Escrow protected</div>
+            <div class="dot-sep"></div>
+            <div class="trust-item">Time-slot rules</div>
+            <div class="dot-sep"></div>
+            <div class="trust-item">Rating-first matching</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Placeholder sections for anchors -->
+    <!-- How it works -->
+<section id="how" class="section-wrap anchor-offset">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="section-header">
+      <h2 class="section-title">How it works</h2>
+      <p class="section-sub">
+        Post your load in minutes, receive bids or choose instant match, and track delivery with escrow protection.
+      </p>
+    </div>
+
+    <div class="how-grid">
+      <!-- Step 1 -->
+      <div class="how-card">
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5h6m-6 4h6m-6 4h4"/>
+            <rect x="4" y="3" width="16" height="18" rx="2" ry="2"/>
+          </svg>
+        </div>
+        <h3 class="how-title">Post your load</h3>
+        <p class="how-text">
+          Enter pickup & drop-off, weight/units, choose delivery type, then pick a date and 1-hour time window.
+          You can attach images or PDFs if needed.
+        </p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="how-card">
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 20h16M13 4l7 7-3 3-7-7 3-3zM5 12l6 6"/>
+          </svg>
+        </div>
+        <h3 class="how-title">Drivers bid or instant match</h3>
+        <p class="how-text">
+          Compare bids by price, ETA, and rating — or select instant match at a system price for guaranteed booking.
+        </p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="how-card">
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="11" width="18" height="9" rx="2"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 1110 0v3"/>
+          </svg>
+        </div>
+        <h3 class="how-title">Pay via escrow & track</h3>
+        <p class="how-text">
+          Funds are held until delivery is confirmed. Time-slot rules apply: customer delays may add fees; late drivers are penalized.
+        </p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="how-card">
+        <div class="how-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 17.3l-6.16 3.24 1.18-6.88L2 8.76l6.92-1L12 1.5l3.08 6.26 6.92 1-5.02 4.9 1.18 6.88z"/>
+          </svg>
+        </div>
+        <h3 class="how-title">Rate & build reputation</h3>
+        <p class="how-text">
+          Both sides rate each other. High-rated drivers get priority access to jobs, and repeat customers earn perks.
+        </p>
+      </div>
+    </div>
+
+    <!-- Mini stats -->
+    <div class="stats-strip">
+      <div class="stat">
+        <div class="stat-num">15 min</div>
+        <div class="stat-label">Metro lead time</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">90 min</div>
+        <div class="stat-label">City/National/Cross-border lead</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">Escrow</div>
+        <div class="stat-label">Secure payments</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5★</div>
+        <div class="stat-label">Rating system</div>
+      </div>
+    </div>
+
+    <!-- Demo anchor -->
+    <div id="demo" class="anchor-offset"></div>
+
+    <!-- Quick Quote (demo) placed under How it works) -->
+    <div class="demo-wrap">
+      <div class="card">
+        <h3 class="card-title">Quick quote (demo)</h3>
+        <!-- ==== The SAME form you had before ==== -->
+        <form id="quickQuoteForm" class="form-grid" novalidate>
+          <!-- Delivery type -->
+          <fieldset class="delivery-types" aria-label="Delivery type">
+            <legend class="sr-only">Delivery type</legend>
+            <label class="pill">
+              <input type="radio" name="deliveryType" value="metropolitan" checked>
+              <span>Metropolitan</span>
+            </label>
+            <label class="pill">
+              <input type="radio" name="deliveryType" value="city">
+              <span>City to City</span>
+            </label>
+            <label class="pill">
+              <input type="radio" name="deliveryType" value="national">
+              <span>National</span>
+            </label>
+            <label class="pill">
+              <input type="radio" name="deliveryType" value="crossborder">
+              <span>Cross-border</span>
+            </label>
+          </fieldset>
+
+          <!-- Core fields -->
+          <input name="pickup" class="input" placeholder="Pickup location" required />
+          <input name="dropoff" class="input" placeholder="Drop-off location" required />
+
+          <!-- Vehicle & urgency -->
+          <div id="vehicleRow" class="grid-two">
+            <select name="vehicle" class="input" aria-label="Vehicle type">
+              <option value="">Choose vehicle type</option>
+              <option value="scooter">Scooter / Bike (small parcels)</option>
+              <option value="bakkie">Bakkie (light loads)</option>
+              <option value="van">Panel Van</option>
+              <option value="truck8">Truck 8-ton</option>
+              <option value="truck14">Truck 14-ton</option>
+              <option value="tautliner">Tautliner / Curtain Side</option>
+            </select>
+            <select name="urgency" class="input" aria-label="Urgency">
+              <option value="">Select urgency</option>
+              <option value="same-day">Same-day</option>
+              <option value="next-day">Next-day</option>
+              <option value="flex">Flexible (2–3 days)</option>
+            </select>
+          </div>
+
+          <!-- Load details -->
+          <div class="grid-two">
+            <input name="weight" class="input" placeholder="Weight (kg)" inputmode="decimal" />
+            <input name="units" class="input" placeholder="Pallets / Items" inputmode="numeric" />
+          </div>
+
+          <!-- Collection date & 1-hour window -->
+          <div class="grid-two">
+            <div class="field">
+              <label for="collectDate" class="label">Collection date</label>
+              <input id="collectDate" name="collectDate" type="date" class="input" required />
+            </div>
+            <div class="field">
+              <label for="collectWindow" class="label">
+                Preferred time window <span id="timeHint" class="hint"></span>
+              </label>
+              <select id="collectWindow" name="collectWindow" class="input" required></select>
+            </div>
+          </div>
+
+          <!-- Cross-border fields (smooth accordion) -->
+          <div id="crossBorderWrap" class="collapsible" aria-hidden="true">
+            <div id="crossBorderFields" class="collapsible-inner">
+              <div class="grid-two">
+                <select name="fromCountry" class="input">
+                  <option value="">Origin country</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="ZW">Zimbabwe</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="BW">Botswana</option>
+                  <option value="NA">Namibia</option>
+                  <option value="MZ">Mozambique</option>
+                </select>
+                <select name="toCountry" class="input">
+                  <option value="">Destination country</option>
+                  <option value="ZA">South Africa</option>
+                  <option value="ZW">Zimbabwe</option>
+                  <option value="ZM">Zambia</option>
+                  <option value="BW">Botswana</option>
+                  <option value="NA">Namibia</option>
+                  <option value="MZ">Mozambique</option>
+                </select>
+              </div>
+              <input name="hsCode" class="input" placeholder="HS code (optional)" />
+              <input name="customsNotes" class="input" placeholder="Customs notes (optional)" />
+            </div>
+          </div>
+
+          <!-- Optional attachments -->
+          <div class="field">
+            <label for="attachments" class="label">Attachments (optional)</label>
+            <input id="attachments" name="attachments" type="file" class="input" multiple accept="image/*,application/pdf"/>
+            <ul id="fileList" class="file-list"></ul>
+          </div>
+
+          <button type="submit" class="btn btn-primary block">Get bids</button>
+          <p id="quickQuoteNote" class="form-note">Demo only — you’ll need an account to post a real load.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Features -->
+<section id="features" class="section-wrap anchor-offset">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="section-header">
+      <h2 class="section-title">Why ExpressNow Connect</h2>
+      <p class="section-sub">A smarter marketplace built for Africa’s entrepreneurs and small businesses.</p>
+    </div>
+
+    <div class="feat-grid">
+      <!-- Dynamic pricing -->
+      <article class="feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h18M3 6h10M3 18h14"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Dynamic pricing</h3>
+        <p class="feat-text">Bidding marketplace with optional instant-match pricing. Smart guardrails prevent over/under-bids.</p>
+      </article>
+
+      <!-- Rating-first matching -->
+      <article class="feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 17.3l-6.16 3.24 1.18-6.88L2 8.76l6.92-1L12 1.5l3.08 6.26 6.92 1-5.02 4.9 1.18 6.88z"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Rating-first matching</h3>
+        <p class="feat-text">Top-rated drivers get priority access, while repeat shippers unlock perks. Performance is rewarded.</p>
+      </article>
+
+      <!-- Escrow payments -->
+      <article class="feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3" y="11" width="18" height="9" rx="2"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7 11V8a5 5 0 1110 0v3"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Escrow payments</h3>
+        <p class="feat-text">Funds are held securely and released on delivery confirmation to protect both sides.</p>
+      </article>
+
+      <!-- Time-slot rules -->
+      <article class="feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <circle cx="12" cy="12" r="9"/>
+            <path stroke-linecap="round" d="M12 7v5l3 2"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Time-slot enforcement</h3>
+        <p class="feat-text">15-min metro lead, +90 min elsewhere. Customer delays may incur fees; late drivers are penalized.</p>
+      </article>
+
+      <!-- Cross-border ready -->
+      <article class="feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2 12a10 10 0 1020 0A10 10 0 002 12z"/>
+            <path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Cross-border ready</h3>
+        <p class="feat-text">Origin/destination country, HS codes, and customs notes built in for SADC routes.</p>
+      </article>
+
+      <!-- Live tracking & proofs -->
+      <article class="feat-card">
+        <div class="feat-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M12 2l3.5 7.1L23 9l-5.5 5.4L19 22l-7-3.7L5 22l1.5-7.6L1 9l7.5--.9L12 2z"/>
+          </svg>
+        </div>
+        <h3 class="feat-title">Tracking & proofs</h3>
+        <p class="feat-text">Live status, photo/PDF attachments, and delivery confirmations for clean audit trails.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<!-- Pricing -->
+<section id="pricing" class="section-wrap anchor-offset">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="section-header">
+      <h2 class="section-title">Simple, transparent pricing</h2>
+      <p class="section-sub">Only pay when a job is completed. Fees are shown upfront—no surprises.</p>
+    </div>
+
+    <div class="price-grid">
+      <!-- Shipper: Pay-as-you-go -->
+      <article class="price-card">
+        <div class="price-head">
+          <span class="price-badge">For Shippers</span>
+          <h3 class="price-title">Pay-as-you-go</h3>
+          <div class="price-fig">No subscription</div>
+          <div class="price-sub">Marketplace fee included in your confirmed price</div>
+        </div>
+        <ul class="price-list">
+          <li><span class="tick"></span> Bidding or instant match</li>
+          <li><span class="tick"></span> Escrow protection</li>
+          <li><span class="tick"></span> Time-slot enforcement</li>
+          <li><span class="tick"></span> Attach images & PDFs</li>
+        </ul>
+        <div class="price-cta">
+          <a href="signup.html" class="btn btn-primary w-full">Create shipper account</a>
+        </div>
+      </article>
+
+      <!-- Shipper: Pro -->
+      <article class="price-card featured">
+        <div class="price-head">
+          <span class="price-badge badge-pro">For Shippers</span>
+          <h3 class="price-title">Pro</h3>
+          <div class="price-fig">Volume discounts</div>
+          <div class="price-sub">Best for frequent bookings & multi-city ops</div>
+        </div>
+        <ul class="price-list">
+          <li><span class="tick"></span> Lower marketplace fees</li>
+          <li><span class="tick"></span> Priority support</li>
+          <li><span class="tick"></span> Saved routes & contacts</li>
+          <li><span class="tick"></span> Monthly statements</li>
+        </ul>
+        <div class="price-cta">
+          <a href="signup.html" class="btn btn-primary w-full">Talk to sales</a>
+        </div>
+      </article>
+
+      <!-- Driver/Fleet -->
+      <article class="price-card">
+        <div class="price-head">
+          <span class="price-badge badge-driver">For Drivers & Fleets</span>
+          <h3 class="price-title">Driver / Fleet</h3>
+          <div class="price-fig">Free to join</div>
+          <div class="price-sub">Service fee on completed jobs only</div>
+        </div>
+        <ul class="price-list">
+          <li><span class="tick"></span> Set your own bids</li>
+          <li><span class="tick"></span> Rating-first job access</li>
+          <li><span class="tick"></span> Fast payouts</li>
+          <li><span class="tick"></span> Cross-border ready</li>
+        </ul>
+        <div class="price-cta">
+          <a href="signup.html" class="btn btn-primary w-full">Sign up as driver</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Footnote -->
+    <p class="price-footnote">
+      Exact fees vary by route, vehicle, and load details. You’ll always see the full amount before you confirm.
+    </p>
+  </div>
+</section>
+<!-- FAQ -->
+<!-- Who pays what -->
+<section id="who-pays" class="section-wrap anchor-offset">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="section-header">
+      <h2 class="section-title">Who pays what?</h2>
+      <p class="section-sub">Simple and transparent — no subscriptions, no hidden fees.</p>
+    </div>
+
+    <div class="who-grid">
+      <!-- Shippers -->
+      <div class="who-card">
+        <h3 class="who-title">For Shippers</h3>
+        <p class="who-lead">Pay-as-you-go</p>
+        <ul class="who-list">
+          <li><span class="tick"></span> Only pay when you confirm a load</li>
+          <li><span class="tick"></span> Price shown includes marketplace fee</li>
+          <li><span class="tick"></span> Escrow protection until delivery</li>
+          <li><span class="tick"></span> Attach images & documents</li>
+          <li><span class="tick"></span> <strong>30-day accounts available</strong> for approved businesses</li>
+        </ul>
+        <a href="signup.html" class="btn btn-primary w-full">Create shipper account</a>
+      </div>
+
+      <!-- Drivers -->
+      <div class="who-card">
+        <h3 class="who-title">For Drivers & Fleets</h3>
+        <p class="who-lead">Free to join</p>
+        <ul class="who-list">
+          <li><span class="tick"></span> No upfront costs</li>
+          <li><span class="tick"></span> Service fee only on completed jobs</li>
+          <li><span class="tick"></span> <strong>Weekly payouts</strong> to your bank account</li>
+          <li><span class="tick"></span> Rating-first job access</li>
+        </ul>
+        <a href="signup.html" class="btn btn-primary w-full">Sign up as driver</a>
+      </div>
+    </div>
+
+    <p class="who-footnote">
+      You’ll always see the full amount before confirming a job. No subscriptions, no hidden charges.
+    </p>
+  </div>
+</section>
+  <!-- Footer -->
+<!-- Footer -->
+<footer class="site-footer footer-gradient text-white mt-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <h3 class="text-2xl font-bold leading-tight">
+          Express<span class="text-cyan-300">Now</span> Connect
+        </h3>
+        <p class="mt-3 text-sm text-gray-200/90">
+          The logistics marketplace for Africa’s entrepreneurs and small businesses.
+          Post your load, get bids from trusted drivers, pay securely.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <nav aria-label="Footer – Quick links">
+        <h4 class="text-white font-semibold mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-sm text-gray-100/90">
+          <li><a href="index.html#how" class="footer-link">How it works</a></li>
+          <li><a href="index.html#features" class="footer-link">Features</a></li>
+          <li><a href="index.html#pricing" class="footer-link">Pricing</a></li>
+          <li><a href="contact.html" class="footer-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-semibold mb-3">Contact</h4>
+        <ul class="space-y-2 text-sm text-gray-100/90">
+          <li class="flex items-center gap-2">
+            <!-- Email Icon -->
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 
+              2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13 20 6.01V6H4zm0 
+              12h16V8l-8 7-8-7v10z"/>
+            </svg>
+            <a href="mailto:info@expressnowconnect.co.za" class="footer-link">
+              info@expressnowconnect.co.za
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <!-- WhatsApp Icon -->
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 3.5A10.5 10.5 0 1 0 4 19.6L3 24l4.6-1.3A10.5 
+              10.5 0 1 0 20 3.5zm-8 18c-1 0-2-.2-3-.5l-4 1.1 1.1-3.9A8.5 
+              8.5 0 1 1 12 21.5zm4.6-6.4c-.2-.1-1.3-.7-1.5-.8-.2 
+              0-.3-.1-.4.1s-.5.8-.6.9-.2.1-.4 0-1-.4-1.8-1.2c-.7-.7-1.2-1.5-1.4-1.7-.1-.2 
+              0-.3.1-.4l.3-.3.3-.3c.1-.1.1-.2 0-.3l-.5-1.3c-.1-.3-.3-.3-.4-.3h-.4c-.1 
+              0-.3 0-.4.2-.1.2-.6.6-.6 1.5s.6 1.8.7 2c.1.2 1.2 1.9 2.9 2.7 1.7.7 1.7.5 2 
+              .5s1-.4 1.1-.7.1-.5.1-.6 0-.1-.3-.2z"/>
+            </svg>
+            <a href="https://wa.me/27720000000" target="_blank" rel="noopener" class="footer-link">
+              +27 72 000 0000
+            </a>
+          </li>
+          <li class="flex items-center gap-2">
+            <!-- Phone Icon -->
+            <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 
+              2.7.7 4.1.7.7 0 1.3.6 1.3 1.3v3.5c0 .7-.6 1.3-1.3 
+              1.3C10.6 22.7 1.3 13.4 1.3 2.6c0-.7.6-1.3 1.3-1.3H6c.7 0 
+              1.3.6 1.3 1.3 0 1.4.2 2.8.7 4.1.1.4 0 .9-.3 1.2l-2.1 
+              2.2z"/>
+            </svg>
+            <a href="tel:+27110000000" class="footer-link">
+              +27 11 000 0000
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h4 class="text-white font-semibold mb-3">Follow us</h4>
+        <ul class="flex flex-wrap gap-4 text-gray-100/90">
+          <li>
+            <a href="#" class="footer-link flex items-center gap-2" aria-label="Facebook">
+              <!-- Facebook -->
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 12A10 10 0 1 0 10.5 22v-7h-2v-3h2V9.8c0-2 1.2-3.1 3-3.1.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.2l-.4 3h-1.8v7A10 10 0 0 0 22 12z"/>
+              </svg>
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link flex items-center gap-2" aria-label="LinkedIn">
+              <!-- LinkedIn -->
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4.98 3.5c0 1.38-1.11 2.5-2.48 2.5S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 23h5V7H0v16zM7.5 7h4.7v2.1h.1c.7-1.2 2.5-2.6 5.2-2.6 5.5 0 6.5 3.6 6.5 8.2V23h-5v-7.8c0-1.9 0-4.4-2.7-4.4s-3.1 2.1-3.1 4.2V23h-5V7z"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="footer-link flex items-center gap-2" aria-label="Twitter">
+              <!-- Twitter/X -->
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M23 3a10.9 10.9 0 0 1-3.1 1.6A4.5 4.5 0 0 0 16.6 1 4.5 4.5 0 0 0 12 5.5c0 .4 0 .8.1 1.2C8 6.6 4.7 4.9 2.2 2.1A4.5 4.5 0 0 0 1.6 4.4c0 1.6.8 3.1 2 3.9-.9 0-1.4-.3-2-.6v.1c0 2.3 1.7 4.3 3.9 4.7-.4.1-.8.2-1.2.2-.3 0-.6 0-.8-.1.6 2 2.4 3.4 4.6 3.4A9 9 0 0 1 2.9 21c-.4 0-.7 0-1.1-.1A12.7 12.7 0 0 0 8.5 22c10.2 0 15.7-8.4 15.7-15.7v-.6A10.9 10.9 0 0 0 23 3z"/>
+              </svg>
+              <span>Twitter</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Legal / Copyright -->
+    <div class="mt-10 pt-5 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-200/90">
+      <p>© <span id="y"></span> ExpressNow Connect. All rights reserved.</p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="footer-link">Terms</a>
+        <a href="#" class="footer-link">Privacy</a>
+        <a href="contact.html" class="footer-link">Support</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- App JS -->
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+
+
+
+<script src="script.js" defer></script>
+
+
+
+
+

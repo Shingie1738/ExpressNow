@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExpressNow Connect | Account Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-md bg-white rounded-xl shadow-md p-8">
+    <h2 class="text-2xl font-bold text-center text-slate-900 mb-6">Client Login</h2>
+    <form id="loginForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-slate-700">Email</label>
+        <input type="email" class="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-slate-700">Password</label>
+        <input type="password" class="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+      </div>
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center space-x-2">
+          <input type="checkbox" class="h-4 w-4 text-blue-600 border-gray-300 rounded"/>
+          <span>Remember me</span>
+        </label>
+        <a href="#" class="text-blue-600 hover:underline">Forgot password?</a>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white py-2.5 rounded-lg font-semibold hover:bg-blue-700">Login</button>
+    </form>
+    <p class="mt-6 text-sm text-center text-slate-600">
+      Don’t have an account? <a href="signup.html" class="text-blue-600 hover:underline">Sign up</a>
+    </p>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // For MVP demo: redirect to dashboard
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>
