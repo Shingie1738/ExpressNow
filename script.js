@@ -364,3 +364,26 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', () => setGroupChecked(btn.getAttribute('data-clear-all'), false));
   });
 })();
+
+// Demo: login submit message
+(function(){
+  const form = document.getElementById('loginForm');
+  if (!form) return;
+  const msg = document.getElementById('loginMessage');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (msg) { msg.classList.remove('hidden'); msg.textContent = 'Demo: login submitted. (Wire to auth later.)'; }
+  });
+})();
+
+// Demo: forgot password submit message
+(function(){
+  const form = document.getElementById('forgotForm');
+  if (!form) return;
+  const msg = document.getElementById('forgotMessage');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (msg) { msg.classList.remove('hidden'); msg.textContent = 'Demo: reset link sent (check your email).'; }
+  });
+})();
+

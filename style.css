@@ -4,33 +4,41 @@
 
 /* ---------- CSS Vars / Theme ---------- */
 :root {
-  --brand-900: #1e40af;
-  --brand-800: #1f46b8;
-  --brand-700: #1d4ed8;
+  /* Brand (Dark Blue ramp) */
+  --brand-900:#0b1223;
+  --brand-800: 112240;
+  --brand-700:#112240;
   --brand-600: #2563eb;
 
+  /* Neutral Ink */
   --ink-900: #0f172a;
   --ink-700: #334155;
   --ink-600: #475569;
   --ink-500: #64748b;
 
+  /* Surfaces / Lines */
   --line: #e5e7eb;
   --bg-soft: #f8fafc;
 
+  /* Call-to-Action (Cyan ramp) */
   --cta-500: #00d4ff;
   --cta-600: #00b4d8;
 
-  --ok-500: #06d6a0;
-  --bad-500: #ef4444;
+  /* State colors */
+  --ok-500: #06d6a0;  /* success / positive */
+  --bad-500: #ef4444; /* error / danger */
 
+  /* Radius tokens */
   --radius-lg: 1rem;
   --radius-md: .9rem;
   --radius-sm: .5rem;
 
+  /* Shadows */
   --shadow-card: 0 10px 30px rgba(2,6,23,.06);
   --shadow-card-lg: 0 12px 28px rgba(2,6,23,.08);
   --shadow-cta: 0 8px 20px rgba(0,212,255,.25);
 
+  /* Layout */
   --header-h: 80px;
 }
 
@@ -59,6 +67,7 @@ html { scroll-behavior: smooth; }
 .header-gradient {
   background: linear-gradient(90deg, var(--brand-900), var(--brand-700));
 }
+
 .nav-link { border-radius: var(--radius-sm); }
 .nav-link:hover { background: rgba(255,255,255,.08); }
 .mobile-menu-slide { display: none; }
@@ -535,13 +544,56 @@ footer a { text-decoration: none; }
 }
 .footer-link:hover{ color:#7dd3fc; }
 
-/* Keep icons from squishing text */
-.site-footer svg{ flex-shrink:0; }
-
-/* Tighter look on small screens */
-@media (max-width: 640px){
-  .site-footer .grid { gap: 2rem; }
+:root {
+  /* ExpressNow brand helpers */
+  --brand-blue-1: #1e40af;
+  --brand-blue-2: #1d4ed8;
+  --brand-blue-3: #2563eb;
+  --brand-cyan:   #00d4ff;
+  --brand-green:  #06d6a0;
 }
+
+html, body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial;
+}
+
+/* Button tone to match your CTAs */
+.btn-brand {
+  background: var(--brand-blue-3);
+  color: #fff;
+  transition: transform .06s ease, box-shadow .2s ease, background .2s ease;
+}
+.btn-brand:hover { background: var(--brand-blue-2); }
+.btn-brand:active { transform: translateY(1px); }
+
+/* Secondary / outline buttons */
+.btn-ghost {
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+.btn-ghost:hover { background: #f9fafb; }
+
+/* Cards */
+.card {
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  border-radius: 1rem; /* 2xl style look */
+  box-shadow: var(--shadow-card, 0 4px 20px rgba(0,0,0,0.06));
+}
+
+/* Table tighten for mobile */
+@media (max-width: 420px) {
+  table th, table td { padding-left: .5rem; padding-right: .5rem; }
+}
+
+/* If your global header uses .header-gradient, we leave it alone here.
+   This dashboard intentionally omits its own header/footer to inherit yours. */
+
+
+
+
+
 
 
 
