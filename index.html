@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ExpressNow Connect | Logistics Marketplace</title>
+
+  <!-- Tailwind + Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="bg-gray-50 pt-20">
+
+  <!-- Fixed Header -->
+  <header class="header-gradient fixed top-0 left-0 right-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="/" class="flex items-center space-x-2">
+          <h1 class="text-white text-3xl font-bold tracking-tight">
+            Express<span class="text-cyan-300">Now</span>
+          </h1>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-2">
+          <a href="#connect" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Connect</a>
+          <a href="#fleet" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Fleet</a>
+          <a href="#pricing" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Pricing</a>
+          <a href="about.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">About</a>
+          <a href="contact.html" class="nav-link text-white hover:text-cyan-300 px-3 py-2 text-sm font-medium">Contact Us</a>
+        </nav>
+
+        <!-- CTA Buttons (Desktop) -->
+        <div class="hidden lg:flex items-center space-x-3">
+          <button id="login-btn-desktop" class="cta-secondary text-white px-5 py-2.5 rounded-lg text-sm font-semibold">
+            Login
+          </button>
+          <button class="cta-secondary text-white px-5 py-2.5 rounded-lg text-sm font-semibold" onclick="location.href='sign-up.html'">
+            Sign up
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white hover:text-cyan-300 focus:outline-none transition-colors duration-200" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="lg:hidden mobile-menu-slide bg-blue-800 bg-opacity-95 backdrop-blur-sm">
+      <div class="px-4 pt-4 pb-6 space-y-3">
+        <a href="#how" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">How it works</a>
+        <a href="#features" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">Features</a>
+        <a href="#pricing" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">Pricing</a>
+        <a href="track.html" class="mobile-nav-link block text-white hover:text-cyan-300 px-4 py-3 text-base font-medium rounded-lg hover:bg-white hover:bg-opacity-10 transition">Track</a>
+
+        <!-- Mobile CTA Buttons -->
+        <div class="pt-4 space-y-3">
+          <button id="login-btn-mobile" class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold">Login</button>
+          <button class="cta-secondary w-full text-white px-6 py-3 rounded-lg text-base font-semibold" onclick="location.href='signup.html'">Sign up</button>
+        </div>
+      </div>
+    </div>
+  </header>
+<!-- Hero: Shippers, Drivers & Fleets (bullet-proof) -->
+<section id="dual-hero" class="relative bg-gradient-to-b from-cyan-50 via-white to-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+    <div class="text-center mb-12">
+      <span class="inline-block text-cyan-700 font-semibold tracking-wide uppercase mb-3">Shippers • Drivers • Fleets</span>
+      <h1 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight">The logistics platform built for everyone</h1>
+      <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">
+        ExpressNow brings shippers, drivers, and fleet managers together — secure payments, live tracking, and fleet tools in one platform.
+      </p>
+    </div>
+
+    <!-- Force 3 columns from small screens up -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <!-- Card 1: Shippers -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-slate-100 flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <span class="px-3 py-1 bg-cyan-100 text-cyan-700 text-sm font-semibold rounded-full">For Shippers</span>
+        <h3 class="text-xl font-bold text-slate-800 mt-3 mb-2">Post & Pay Securely</h3>
+        <p class="text-slate-600 mb-4">Post loads in minutes, receive bids or instant-match, and pay safely with escrow.</p>
+        <ul class="space-y-2 text-slate-700">
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Transparent bidding</span></li>
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Escrow protection</span></li>
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Live delivery tracking</span></li>
+        </ul>
+        <div class="mt-auto pt-6 flex items-center gap-4">
+          <a href="signup.html" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg font-semibold">Ship Now</a>
+          <a href="#shippers" class="text-cyan-700 font-medium hover:underline">Learn more →</a>
+        </div>
+      </div>
+
+      <!-- Card 2: Drivers -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-slate-100 flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <span class="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full">For Drivers</span>
+        <h3 class="text-xl font-bold text-slate-800 mt-3 mb-2">Bid, Deliver & Earn</h3>
+        <p class="text-slate-600 mb-4">Browse available jobs, place bids, deliver on time, and get paid instantly.</p>
+        <ul class="space-y-2 text-slate-700">
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Set your own rates</span></li>
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Build ratings & reviews</span></li>
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Fast, secure payouts</span></li>
+        </ul>
+        <div class="mt-auto pt-6 flex items-center gap-4">
+          <a href="signup.html" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg font-semibold">Join as Driver</a>
+          <a href="#hero" class="text-cyan-700 font-medium hover:underline">Learn more →</a>
+        </div>
+      </div>
+
+      <!-- Card 3: Fleets -->
+      <div class="p-6 bg-white rounded-2xl shadow-lg border border-slate-100 flex flex-col transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl">
+        <span class="px-3 py-1 bg-indigo-100 text-indigo-700 text-sm font-semibold rounded-full">For Fleets</span>
+        <h3 class="text-xl font-bold text-slate-800 mt-3 mb-2">Fleet Manager Lite</h3>
+        <p class="text-slate-600 mb-4">Assign jobs, track fuel and service, monitor drivers, and reconcile payouts.</p>
+        <ul class="space-y-2 text-slate-700">
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Job assignment & auto-assign</span></li>
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Fuel & service logs</span></li>
+          <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-cyan-500"></span><span>Driver scorecards</span></li>
+        </ul>
+        <div class="mt-auto pt-6 flex items-center gap-4">
+          <a href="signup.html" class="bg-cyan-600 hover:bg-cyan-700 text-white px-4 py-2 rounded-lg font-semibold">Start Fleet</a>
+          <a href="#fleet-lite" class="text-cyan-700 font-medium hover:underline">Learn more →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="shippers" class="hero-wrap relative overflow-hidden"> 
+    <div class="hero-bg"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <!-- Left: Copy -->
+        <div class="lg:col-span-7">
+          <span class="tagline">The logistics marketplace for Africa’s entrepreneurs and small businesses</span>
+
+          <h1 class="hero-title">
+            Post your Freight, get bids from trusted drivers, <span class="accent">pay securely</span>.
+          </h1>
+
+          <p class="hero-sub">
+            Time-slot enforcement, rating-first matching, and optional instant pricing. Start in minutes—no phone calls, no spreadsheets.
+          </p>
+
+          <div class="hero-badges">
+            <span class="badge">Escrow payments</span>
+            <span class="badge">5-star rating system</span>
+            <span class="badge">Cross-border ready</span>
+          </div>
+
+          <div class="hero-ctas">
+            <a href="signup.html" class="btn btn-primary">Create account</a>
+            <!-- Removed "Try the Demo" link since demo section is removed -->
+            <a id="login-link-hero" href="#" class="btn btn-ghost">Login</a>
+          </div>
+
+          <!-- Trust bullets -->
+          <ul class="hero-checklist">
+            <li><span class="check"></span> Instant metro lead time (15 min)</li>
+            <li><span class="check"></span> City/National/Cross-border lead (90 min)</li>
+            <li><span class="check"></span> Transparent bids + instant match</li>
+          </ul>
+        </div>
+
+        <!-- Right: Product preview -->
+        <div class="lg:col-span-5">
+          <div class="hero-media">
+            <!-- Top mock card -->
+            <div class="mock-card">
+              <div class="mock-header">
+                <div class="pill-mini">Freight • Metro</div>
+                <div class="chip">Est. R620</div>
+              </div>
+
+              <div class="route">
+                <div class="point">
+                  <span class="dot dot-green"></span>
+                  <div>
+                    <div class="route-label">Pickup</div>
+                    <div class="route-val">Cape Town CBD</div>
+                  </div>
+                </div>
+
+                <div class="route-line">
+                  <svg viewBox="0 0 240 12" preserveAspectRatio="none">
+                    <path d="M2 6 H238" vector-effect="non-scaling-stroke" />
+                  </svg>
+                </div>
+
+                <div class="point">
+                  <span class="dot dot-blue"></span>
+                  <div>
+                    <div class="route-label">Drop-off</div>
+                    <div class="route-val">Stellenbosch</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="meta">
+                <div class="meta-item">
+                  <span class="meta-k">Window</span>
+                  <span class="meta-v">11:00–12:00, Today</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-k">Vehicle</span>
+                  <span class="meta-v">Bakkie</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-k">Weight</span>
+                  <span class="meta-v">350 kg</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom mock card -->
+            <div class="mock-card alt">
+              <div class="mock-header">
+                <div class="pill-mini">Bids</div>
+                <div class="chip chip-soft">3 incoming</div>
+              </div>
+              <div class="bids">
+                <div class="bid">
+                  <div class="bid-left">
+                    <div class="avatar">TM</div>
+                    <div>
+                      <div class="bid-name">Tumi Logistics</div>
+                      <div class="bid-sub">4.9★ • 120 trips</div>
+                    </div>
+                  </div>
+                  <div class="bid-right">
+                    <div class="bid-price">R580</div>
+                    <div class="bid-eta">ETA 45–60m</div>
+                  </div>
+                </div>
+                <div class="bid">
+                  <div class="bid-left">
+                    <div class="avatar">KB</div>
+                    <div>
+                      <div class="bid-name">Kabelo Freight</div>
+                      <div class="bid-sub">4.8★ • 92 trips</div>
+                    </div>
+                  </div>
+                  <div class="bid-right">
+                    <div class="bid-price">R615</div>
+                    <div class="bid-eta">ETA 40–55m</div>
+                  </div>
+                </div>
+                <div class="bid">
+                  <div class="bid-left">
+                    <div class="avatar">AN</div>
+                    <div>
+                      <div class="bid-name">Anesu Movers</div>
+                      <div class="bid-sub">5.0★ • 60 trips</div>
+                    </div>
+                  </div>
+                  <div class="bid-right">
+                    <div class="bid-price">R640</div>
+                    <div class="bid-eta">ETA 50–65m</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mock-actions">
+                <a href="signup.html" class="btn btn-primary w-full">Get started</a>
+              </div>
+            </div>
+
+            <!-- Mini trust strip -->
+            <div class="trust-strip">
+              <div class="trust-item">Escrow protected</div>
+              <div class="dot-sep"></div>
+              <div class="trust-item">Time-slot rules</div>
+              <div class="dot-sep"></div>
+              <div class="trust-item">Rating-first matching</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Drivers – Learn more (sectionalized) -->
+<section id="drivers" class="hero-wrap sub-hero relative overflow-visible">
+  <div class="hero-bg"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12">
+    <div class="grid lg:grid-cols-12 gap-10 items-start">
+      <!-- Left: Copy -->
+      <div class="lg:col-span-7">
+        <span class="tagline">For independent drivers & small teams</span>
+
+        <h2 class="hero-title">
+          Browse jobs, place bids, <span class="accent">get paid fast</span>.
+        </h2>
+
+        <p class="hero-sub">
+          Set your own rates, build your reputation, and receive secure payouts via escrow. No phone calls or chasing invoices.
+        </p>
+
+        <div class="hero-badges">
+          <span class="badge">Instant payouts</span>
+          <span class="badge">Ratings & reviews</span>
+          <span class="badge">In-app navigation</span>
+        </div>
+
+        <div class="hero-ctas">
+          <a href="signup.html" class="btn btn-primary">Join as Driver</a>
+          <a id="login-link-driver" href="#" class="btn btn-ghost">Login</a>
+        </div>
+
+        <ul class="hero-checklist">
+          <li><span class="check"></span> Choose the jobs you want</li>
+          <li><span class="check"></span> Transparent bidding & ETAs</li>
+          <li><span class="check"></span> Escrow-protected payouts</li>
+        </ul>
+      </div>
+
+      <!-- Right: Sectionalized content -->
+      <div class="lg:col-span-5">
+        <div class="hero-media">
+          
+          <!-- Section: Open Jobs -->
+          <div class="space-y-3">
+  
+            <!-- Card: Open Job -->
+            <div class="mock-card">
+              <div class="mock-header">
+                <div class="pill-mini">Job • Open</div>
+                <div class="chip">R600</div>
+              </div>
+
+              <!-- Shipper/company info -->
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-3">
+                  <div class="w-9 h-9 rounded-full bg-cyan-100 text-cyan-800 font-bold grid place-items-center">AF</div>
+                  <div>
+                    <div class="text-sm font-semibold">Acme Foods (PTY) Ltd</div>
+                    <div class="text-xs text-slate-500">4.8★ • 312 shipments</div>
+                  </div>
+                </div>
+                <span class="text-xs px-2 py-1 rounded bg-slate-100 text-slate-700">Verified Shipper</span>
+              </div>
+
+              <!-- Route -->
+              <div class="route">
+                <div class="point">
+                  <span class="dot dot-green"></span>
+                  <div>
+                    <div class="route-label">Pickup</div>
+                    <div class="route-val">Sandton, JHB</div>
+                  </div>
+                </div>
+                <div class="route-line">
+                  <svg viewBox="0 0 240 12" preserveAspectRatio="none">
+                    <path d="M2 6 H238" vector-effect="non-scaling-stroke" />
+                  </svg>
+                </div>
+                <div class="point">
+                  <span class="dot dot-blue"></span>
+                  <div>
+                    <div class="route-label">Drop-off</div>
+                    <div class="route-val">Centurion, PTA</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="meta">
+                <div class="meta-item">
+                  <span class="meta-k">Pickup Window</span>
+                  <span class="meta-v">14:00–15:00, Today</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-k">Vehicle</span>
+                  <span class="meta-v">Panel Van</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-k">Weight</span>
+                  <span class="meta-v">420 kg</span>
+                </div>
+              </div>
+
+              <!-- Bid area -->
+              <div class="mt-4 p-3 rounded-lg bg-cyan-50 border border-cyan-100">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="text-sm font-semibold text-cyan-800">You can bid</div>
+                  <div class="text-xs text-cyan-700">Time left: 23m</div>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2">
+                  <label for="driver-bid" class="sr-only">Your bid</label>
+                  <div class="relative flex-1 min-w-[160px]">
+                    <span class="absolute inset-y-0 left-3 grid place-items-center text-slate-500 text-sm">R</span>
+                    <input
+                      id="driver-bid"
+                      type="number"
+                      inputmode="decimal"
+                      min="1"
+                      step="1"
+                      value="590"
+                      class="w-full pl-7 pr-3 py-2 rounded-lg border border-cyan-200 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-200 outline-none"
+                    />
+                  </div>
+                  <button type="button" class="btn btn-primary whitespace-nowrap w-full sm:w-auto">Bid</button>
+                  <button type="button" class="btn btn-ghost border border-red-200 text-red-600 hover:bg-red-50 whitespace-nowrap w-full sm:w-auto">Reject</button>
+                </div>
+
+                <div class="mt-2 text-xs text-slate-600 flex items-center justify-between">
+                  <span>Best bid: <strong>R580</strong></span>
+                  <span>Your est. earnings: <strong>R520</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Section: Completed Jobs -->
+          <div class="space-y-3 mt-8">
+            
+            <!-- Card: Completed Job -->
+            <div class="mock-card">
+              <div class="mock-header">
+                <div class="pill-mini">Job • Completed</div>
+                <div class="chip chip-soft">POD received</div>
+              </div>
+
+              <!-- Route -->
+              <div class="route">
+                <div class="point">
+                  <span class="dot dot-green"></span>
+                  <div>
+                    <div class="route-label">Pickup</div>
+                    <div class="route-val">Cape Town CBD</div>
+                  </div>
+                </div>
+                <div class="route-line">
+                  <svg viewBox="0 0 240 12" preserveAspectRatio="none">
+                    <path d="M2 6 H238" vector-effect="non-scaling-stroke" />
+                  </svg>
+                </div>
+                <div class="point">
+                  <span class="dot dot-blue"></span>
+                  <div>
+                    <div class="route-label">Drop-off</div>
+                    <div class="route-val">Stellenbosch</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="meta">
+                <div class="meta-item">
+                  <span class="meta-k">Rating</span>
+                  <span class="meta-v">5.0★</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-k">Payout</span>
+                  <span class="meta-v">R640</span>
+                </div>
+                <div class="meta-item">
+                  <span class="meta-k">Proof</span>
+                  <span class="meta-v">Signed POD</span>
+                </div>
+              </div>
+
+              <div class="mock-actions">
+                <a href="signup.html" class="btn btn-primary w-full">Find more jobs</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trust strip -->
+          <div class="trust-strip mt-8">
+            <div class="trust-item">Fast payouts</div>
+            <div class="dot-sep"></div>
+            <div class="trust-item">Ratings matter</div>
+            <div class="dot-sep"></div>
+            <div class="trust-item">Clear job details</div>
+          </div>
+
+        </div>
+      </div>
+      <!-- /Right -->
+    </div>
+  </div>
+</section>
+<!-- Fleet Manager Lite -->
+<section id="fleet-lite" class="hero-wrap sub-hero relative overflow-visible">
+  <div class="hero-bg"></div>
+
+  <!-- NOTE: use max-w-6xl to avoid .max-w-7xl rules -->
+  <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
+    <!-- Header -->
+    <div class="mb-8">
+      <span class="tagline">Fleet Manager Lite</span>
+      <h2 class="hero-title mt-2">Simple fleet dashboard — start fast, measure what matters</h2>
+      <p class="hero-sub max-w-3xl">
+        Manage 5 vehicles out the gate: profiles with drivers, fuel logging, service reminders, and weekly reports. Start on a spreadsheet and scale up later.
+      </p>
+
+      <div class="mt-4 flex flex-wrap gap-3">
+        <a href="#" class="btn btn-ghost">Download Weekly Report (PDF)</a>
+      </div>
+    </div>
+
+    <!-- Dashboard: KPI row -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <div class="card p-4">
+        <div class="text-xs uppercase tracking-wide text-slate-500">Active Vehicles</div>
+        <div class="text-2xl font-bold text-slate-900">5</div>
+        <div class="mt-1 text-xs text-slate-500">Total registered</div>
+      </div>
+      <div class="card p-4">
+        <div class="text-xs uppercase tracking-wide text-slate-500">Fuel Spend (This Week)</div>
+        <div class="text-2xl font-bold text-slate-900">R 6,820</div>
+        <div class="mt-1 text-xs text-slate-500">All vehicles</div>
+      </div>
+      <div class="card p-4">
+        <div class="text-xs uppercase tracking-wide text-slate-500">Avg. Efficiency</div>
+        <div class="text-2xl font-bold text-slate-900">11.9 km/L</div>
+        <div class="mt-1 text-xs text-slate-500">Fleet average</div>
+      </div>
+    </div>
+
+    <!-- NEW: Four blocks under KPI (Left: Basic Analytics + Refueling; Right: Distance Travelled + Route Deviations) -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+      <!-- Left column -->
+      <div class="space-y-6">
+        <!-- Basic Analytics -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Basic Analytics</h3>
+            <span class="pill-mini">This week</span>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl border border-slate-100 p-3">
+              <div class="text-xs text-slate-500">Cost per km</div>
+              <div class="text-xl font-bold">R 2.11</div>
+              <div class="mt-1 text-xs text-emerald-700">▼ 4% vs last week</div>
+            </div>
+
+            <div class="rounded-xl border border-slate-100 p-3">
+              <div class="text-xs text-slate-500">Avg km/L</div>
+              <div class="text-xl font-bold">12.3</div>
+              <div class="mt-1 text-xs text-emerald-700">▲ trend improving</div>
+            </div>
+
+            <div class="rounded-xl border border-slate-100 p-3 col-span-2">
+              <div class="text-xs text-slate-500 mb-1">Fuel spend per vehicle</div>
+              <div class="space-y-2">
+                <div class="flex items-center gap-2">
+                  <span class="w-28 text-xs text-slate-600">CA 12-345</span>
+                  <div class="flex-1 h-2 rounded bg-slate-100">
+                    <div class="h-2 rounded bg-cyan-600" style="width:55%"></div>
+                  </div>
+                  <span class="w-14 text-right text-xs">R 980</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-28 text-xs text-slate-600">CY 98-765</span>
+                  <div class="flex-1 h-2 rounded bg-slate-100">
+                    <div class="h-2 rounded bg-cyan-600" style="width:68%"></div>
+                  </div>
+                  <span class="w-14 text-right text-xs">R 1,210</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-28 text-xs text-slate-600">CF 45-210</span>
+                  <div class="flex-1 h-2 rounded bg-slate-100">
+                    <div class="h-2 rounded bg-cyan-600" style="width:80%"></div>
+                  </div>
+                  <span class="w-14 text-right text-xs">R 1,430</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-28 text-xs text-slate-600">CL 77-552</span>
+                  <div class="flex-1 h-2 rounded bg-slate-100">
+                    <div class="h-2 rounded bg-cyan-600" style="width:42%"></div>
+                  </div>
+                  <span class="w-14 text-right text-xs">R 750</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="w-28 text-xs text-slate-600">CAA 301-221</span>
+                  <div class="flex-1 h-2 rounded bg-slate-100">
+                    <div class="h-2 rounded bg-cyan-600" style="width:37%"></div>
+                  </div>
+                  <span class="w-14 text-right text-xs">R 640</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Refueling Summary (under Basic Analytics) -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Refueling Summary</h3>
+            <span class="pill-mini">This week</span>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="rounded-xl border border-slate-100 p-3">
+              <div class="text-xs text-slate-500">Total refuels</div>
+              <div class="text-xl font-bold">9</div>
+              <div class="mt-1 text-xs text-slate-500">Across 5 vehicles</div>
+            </div>
+            <div class="rounded-xl border border-slate-100 p-3">
+              <div class="text-xs text-slate-500">Avg km between refuels</div>
+              <div class="text-xl font-bold">235 km</div>
+              <div class="mt-1 text-xs text-slate-500">Fleet average</div>
+            </div>
+            <div class="rounded-xl border border-slate-100 p-3 col-span-2">
+              <div class="text-xs text-slate-500 mb-2">Refuels by vehicle</div>
+              <div class="grid grid-cols-2 gap-2 text-sm">
+                <div class="flex items-center justify-between border border-slate-100 rounded-lg px-3 py-2">
+                  <span class="text-slate-600">CA 12-345</span><span class="font-semibold">2</span>
+                </div>
+                <div class="flex items-center justify-between border border-slate-100 rounded-lg px-3 py-2">
+                  <span class="text-slate-600">CY 98-765</span><span class="font-semibold">2</span>
+                </div>
+                <div class="flex items-center justify-between border border-slate-100 rounded-lg px-3 py-2">
+                  <span class="text-slate-600">CF 45-210</span><span class="font-semibold">3</span>
+                </div>
+                <div class="flex items-center justify-between border border-slate-100 rounded-lg px-3 py-2">
+                  <span class="text-slate-600">CL 77-552</span><span class="font-semibold">1</span>
+                </div>
+                <div class="flex items-center justify-between border border-slate-100 rounded-lg px-3 py-2">
+                  <span class="text-slate-600">CAA 301-221</span><span class="font-semibold">1</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column -->
+      <div class="space-y-6">
+        <!-- Distance Travelled (This Week) -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Distance Travelled (This Week)</h3>
+            <span class="pill-mini">By vehicle</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CA 12-345</span>
+              <span class="font-semibold">612 km</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CY 98-765</span>
+              <span class="font-semibold">488 km</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CF 45-210</span>
+              <span class="font-semibold">842 km</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CL 77-552</span>
+              <span class="font-semibold">320 km</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CAA 301-221</span>
+              <span class="font-semibold">275 km</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Route Deviations (This Week) -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Route Deviations (This Week)</h3>
+            <span class="pill-mini">Flags</span>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CA 12-345</span>
+              <span class="font-semibold">1</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CY 98-765</span>
+              <span class="font-semibold">0</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CF 45-210</span>
+              <span class="font-semibold">2</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CL 77-552</span>
+              <span class="font-semibold">0</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <span class="text-slate-700">CAA 301-221</span>
+              <span class="font-semibold">1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main grid -->
+    <div class="grid lg:grid-cols-12 gap-6 items-start">
+      <!-- Left: Vehicles & Fuel -->
+      <div class="lg:col-span-7 space-y-6">
+
+        <!-- Vehicle Profiles (with Driver names) -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Vehicle Profiles</h3>
+            <span class="pill-mini">5 vehicles</span>
+          </div>
+
+          <div class="overflow-x-auto -mx-3 md:mx-0">
+            <table class="min-w-full text-sm">
+              <thead class="text-left text-slate-500">
+                <tr>
+                  <th class="py-2 pr-4">Reg</th>
+                  <th class="py-2 pr-4">Driver</th>
+                  <th class="py-2 pr-4">Type</th>
+                  <th class="py-2 pr-4">Odometer</th>
+                  <th class="py-2 pr-4">Service Interval</th>
+                  <th class="py-2 pr-4">Next Service</th>
+                </tr>
+              </thead>
+              <tbody class="text-slate-800">
+                <tr class="border-t border-slate-100">
+                  <td class="py-2 pr-4 font-medium">CA 12-345</td>
+                  <td class="py-2 pr-4">Tumi M.</td>
+                  <td class="py-2 pr-4">Bakkie</td>
+                  <td class="py-2 pr-4">84,120 km</td>
+                  <td class="py-2 pr-4">10,000 km</td>
+                  <td class="py-2 pr-4">90,000 km</td>
+                </tr>
+                <tr class="border-t border-slate-100">
+                  <td class="py-2 pr-4 font-medium">CY 98-765</td>
+                  <td class="py-2 pr-4">Kabelo B.</td>
+                  <td class="py-2 pr-4">Panel Van</td>
+                  <td class="py-2 pr-4">152,340 km</td>
+                  <td class="py-2 pr-4">15,000 km</td>
+                  <td class="py-2 pr-4">165,000 km</td>
+                </tr>
+                <tr class="border-t border-slate-100">
+                  <td class="py-2 pr-4 font-medium">CF 45-210</td>
+                  <td class="py-2 pr-4">Anesu N.</td>
+                  <td class="py-2 pr-4">8-Ton</td>
+                  <td class="py-2 pr-4">276,810 km</td>
+                  <td class="py-2 pr-4">20,000 km</td>
+                  <td class="py-2 pr-4">280,000 km</td>
+                </tr>
+                <tr class="border-t border-slate-100">
+                  <td class="py-2 pr-4 font-medium">CL 77-552</td>
+                  <td class="py-2 pr-4">Lerato K.</td>
+                  <td class="py-2 pr-4">Refrigerated</td>
+                  <td class="py-2 pr-4">63,940 km</td>
+                  <td class="py-2 pr-4">10,000 km</td>
+                  <td class="py-2 pr-4">70,000 km</td>
+                </tr>
+                <tr class="border-t border-slate-100">
+                  <td class="py-2 pr-4 font-medium">CAA 301-221</td>
+                  <td class="py-2 pr-4">Sipho D.</td>
+                  <td class="py-2 pr-4">Trailer</td>
+                  <td class="py-2 pr-4">34,120 km</td>
+                  <td class="py-2 pr-4">12,000 km</td>
+                  <td class="py-2 pr-4">36,000 km</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Fuel Logs (latest) -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Fuel Logs (Latest)</h3>
+            <a href="#" class="btn btn-ghost">Export CSV</a>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex flex-wrap items-center justify-between gap-3 border border-slate-100 rounded-xl p-3">
+              <div class="flex items-center gap-3">
+                <span class="pill-mini">CA 12-345</span>
+                <div class="text-sm">
+                  <div class="font-semibold">48 L @ R 1,032</div>
+                  <div class="text-xs text-slate-500">Total • Engen Paarden Eiland</div>
+                  <!-- NEW: refuels + avg distance -->
+                  <div class="text-xs text-slate-500 mt-1">Refuels this week: <span class="font-medium text-slate-700">2</span> • Avg distance between refuels: <span class="font-medium text-slate-700">260 km</span></div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold">Odo 84,090</div>
+                <div class="text-xs text-slate-500">Note: Toll receipt added</div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 border border-slate-100 rounded-xl p-3">
+              <div class="flex items-center gap-3">
+                <span class="pill-mini">CY 98-765</span>
+                <div class="text-sm">
+                  <div class="font-semibold">62 L @ R 1,375</div>
+                  <div class="text-xs text-slate-500">BP Longmeadow</div>
+                  <!-- NEW -->
+                  <div class="text-xs text-slate-500 mt-1">Refuels this week: <span class="font-medium text-slate-700">2</span> • Avg distance between refuels: <span class="font-medium text-slate-700">210 km</span></div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold">Odo 152,210</div>
+                <div class="text-xs text-slate-500">Receipt photo</div>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 border border-slate-100 rounded-xl p-3">
+              <div class="flex items-center gap-3">
+                <span class="pill-mini">CF 45-210</span>
+                <div class="text-sm">
+                  <div class="font-semibold">71 L @ R 1,635</div>
+                  <div class="text-xs text-slate-500">Shell Colesberg</div>
+                  <!-- NEW -->
+                  <div class="text-xs text-slate-500 mt-1">Refuels this week: <span class="font-medium text-slate-700">3</span> • Avg distance between refuels: <span class="font-medium text-slate-700">195 km</span></div>
+                </div>
+              </div>
+              <div class="text-right">
+                <div class="text-sm font-semibold">Odo 276,620</div>
+                <div class="text-xs text-slate-500">Note: Overnight stop</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Analytics & Reminders -->
+      <div class="lg:col-span-5 space-y-6">
+        <!-- Service Reminders -->
+        <div class="card p-5">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="card-title">Service Reminders</h3>
+            <a href="#" class="btn btn-ghost">Export</a>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <div>
+                <div class="font-semibold text-slate-800">CA 12-345 • Bakkie • Tumi M.</div>
+                <div class="text-xs text-slate-500">Due at 90,000 km • Next in ~5,880 km</div>
+              </div>
+              <span class="pill-mini">Upcoming</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <div>
+                <div class="font-semibold text-slate-800">CY 98-765 • Panel Van • Kabelo B.</div>
+                <div class="text-xs text-slate-500">Time-based: 6 months • Last service 4 months ago</div>
+              </div>
+              <span class="pill-mini">Monitor</span>
+            </div>
+            <div class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+              <div>
+                <div class="font-semibold text-slate-800">CF 45-210 • 8-Ton • Anesu N.</div>
+                <div class="text-xs text-slate-500">Due at 280,000 km • Next in ~3,190 km</div>
+              </div>
+              <span class="pill-mini">Upcoming</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- /NEW Right-side Logs -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Pricing -->
+<section id="pricing" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="mb-12 text-center">
+      <span class="inline-block text-cyan-600 text-xs tracking-widest uppercase">Pricing</span>
+      <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-gray-900">Simple, transparent options</h2>
+      <p class="mt-3 text-gray-600 max-w-2xl mx-auto">
+        Pick how you want to pay on Connect, and scale your team with Fleet Manager Lite.
+      </p>
+    </div>
+
+    <!-- Two columns: Connect + Fleet -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <!-- CONNECT -->
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col">
+        <span class="px-2 py-1 text-[10px] font-semibold uppercase rounded bg-cyan-50 text-cyan-700 border border-cyan-200">Connect</span>
+        <h3 class="mt-2 text-2xl font-semibold text-gray-900">Shippers & Drivers</h3>
+        <p class="mt-2 text-sm text-gray-600">Choose Prepaid per job, or get a 30-Day account with consolidated billing.</p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 flex-1">
+          <!-- Prepaid -->
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-5 flex flex-col">
+            <h4 class="text-gray-900 font-semibold">Prepaid</h4>
+            <p class="mt-1 text-xs text-gray-500">Pay per job. No monthly fees.</p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700 flex-1">
+              <li>• Secure escrow & proof of delivery</li>
+              <li>• Instant driver payout option</li>
+              <li>• Best for ad-hoc shipments</li>
+            </ul>
+            <a href="#signup" class="mt-auto inline-flex justify-center w-full rounded-lg bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 transition">
+              Get started
+            </a>
+          </div>
+
+          <!-- 30-Day Account -->
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-5 flex flex-col">
+            <h4 class="text-gray-900 font-semibold">30-Day Account</h4>
+            <p class="mt-1 text-xs text-gray-500">Monthly statement. Pay in 30 days.</p>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700 flex-1">
+              <li>• Consolidated invoices & PO support</li>
+              <li>• Priority support & account review</li>
+              <li>• Ideal for regular shipping</li>
+            </ul>
+            <a href="#contact" class="mt-auto inline-flex justify-center w-full rounded-lg border border-cyan-500 text-cyan-600 hover:bg-cyan-50 font-semibold py-2 transition">
+              Get started
+            </a>
+          </div>
+        </div>
+
+        <!-- Driver payouts note -->
+        <div class="mt-6 bg-gray-50 rounded-lg border border-gray-200 p-4">
+          <p class="text-sm text-gray-700">
+            <span class="font-semibold text-gray-900">Driver payouts:</span> paid <span class="font-semibold text-cyan-600">twice weekly</span> (Mon & Thu). Instant payout available for a small fee.
+          </p>
+        </div>
+      </div>
+
+      <!-- FLEET MANAGER LITE -->
+      <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 flex flex-col">
+        <span class="px-2 py-1 text-[10px] font-semibold uppercase rounded bg-cyan-50 text-cyan-700 border border-cyan-200">Fleet</span>
+        <h3 class="mt-2 text-2xl font-semibold text-gray-900">Fleet Manager Lite</h3>
+        <p class="mt-2 text-sm text-gray-600">Simple monthly pricing. Pay per vehicle, cancel anytime.</p>
+
+        <div class="mt-6">
+          <!-- Single monthly plan -->
+          <div class="bg-gray-50 rounded-xl border border-gray-200 p-6 flex flex-col h-full">
+            <h4 class="text-gray-900 font-semibold">Monthly</h4>
+            <p class="mt-1 text-xs text-gray-500">R69.99 per vehicle / month</p>
+            <div class="mt-4 text-3xl font-bold text-gray-900">
+              R69.99<span class="text-sm text-gray-500"> / vehicle</span>
+            </div>
+            <ul class="mt-4 space-y-2 text-sm text-gray-700 flex-1">
+              <li>• Add or remove vehicles anytime</li>
+              <li>• Fuel logs & basic analytics</li>
+              <li>• Service reminders</li>
+              <li>• Weekly PDF reports</li>
+            </ul>
+            <a href="#signup-fleet" class="mt-auto inline-flex justify-center w-full rounded-lg bg-cyan-500 hover:bg-cyan-400 text-white font-semibold py-2 transition">
+              Get started
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="text-white mt-0">
+  <div class="bg-slate-900 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-10 text-center md:text-left">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <h3 class="text-2xl font-bold leading-tight">
+            Express<span class="text-cyan-300">Now</span>
+          </h3>
+          <p class="mt-3 text-sm text-gray-200">
+            ExpressNow connects shippers and drivers through a trusted logistics marketplace, while helping businesses manage their fleets with simple tools for fuel, service, and reporting.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <nav aria-label="Footer – Quick links">
+          <h4 class="font-semibold mb-3">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html#how" class="transition-colors hover:text-cyan-300 text-gray-200">How it works</a></li>
+            <li><a href="index.html#features" class="transition-colors hover:text-cyan-300 text-gray-200">Features</a></li>
+            <li><a href="index.html#pricing" class="transition-colors hover:text-cyan-300 text-gray-200">Pricing</a></li>
+            <li><a href="contact.html" class="transition-colors hover:text-cyan-300 text-gray-200">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="font-semibold mb-3">Contact</h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <span class="w-5 h-5">📧</span>
+              <a href="mailto:info@expressnowconnect.co.za" class="transition-colors hover:text-cyan-300 text-gray-200">
+                info@expressnowconnect.co.za
+              </a>
+            </li>
+            <li class="flex items-center justify-center md:justify-start gap-2">
+              <span class="w-5 h-5">📱</span>
+              <a href="https://wa.me/27720000000" target="_blank" rel="noopener" class="transition-colors hover:text-cyan-300 text-gray-200">
+                +27 72 000 0000
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div>
+          <h4 class="font-semibold mb-3">Social</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="transition-colors hover:text-cyan-300 text-gray-200">LinkedIn</a></li>
+            <li><a href="#" class="transition-colors hover:text-cyan-300 text-gray-200">Twitter/X</a></li>
+            <li><a href="#" class="transition-colors hover:text-cyan-300 text-gray-200">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="mt-10 text-xs text-gray-300 text-center">
+        © <span id="yr"></span> ExpressNow. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  (function () {
+    var el = document.getElementById('yr');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+</body>
+</html>
+
